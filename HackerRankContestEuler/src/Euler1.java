@@ -40,22 +40,19 @@ public class Euler1 {
 		// TODO Auto-generated constructor stub
 	}
 	
-    public static int sum(int x){
-        
-        int i = 1, result = 0;
-
-        for ( i = 1 ; i < x ; i++)
-            if((i%3 == 0) || ( i%5 ==0))
-               result += i; 
-
-        return result;
+    public static long sumOfN(long n){
+        return n*(n+1)/2;
     }
+    
     public static void main(String[] args) {
         
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        for(int a0 = 0; a0 < n; a0++)
-            System.out.println(sum(in.nextInt()));
+        long n = in.nextInt();
+        for(int a0 = 0; a0 < n; a0++) {
+        	long t = in.nextInt() - 1;
+        	 // no need to use floor it is implicit in java
+            System.out.println( (3 * sumOfN(t/3)) +  (5 * sumOfN(t/5)) - (15 * sumOfN(t/15)) );
+        }
         in.close();
         
     }
