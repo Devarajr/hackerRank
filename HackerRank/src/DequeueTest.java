@@ -111,7 +111,7 @@ In these subarrays, there are  unique numbers, respectively. The maximum amount 
             }
             
             System.out.println(maxUnique);
-            
+            in.close();
         }
     }
 

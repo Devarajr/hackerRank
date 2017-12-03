@@ -115,6 +115,7 @@ public class StudentSort
          for(Student st: studentList){
          System.out.println(st.getFname());
       }
+         in.close();
    }
 }
 

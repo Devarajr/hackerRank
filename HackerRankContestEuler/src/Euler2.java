@@ -35,36 +35,21 @@ public class Euler2 {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static long fibEven(long n) {
-		long sum = 0, fib = 0,i = 0;
-
-		while(fib <= n) {
-			 fib = fib(++i); 
-			 if(fib%2 ==0) sum += fib;
-		}
-
-		return sum;
-	}
-	
-	public static long fib(long n) {
-		long fib = 0;
-		if(n==1) {
-			fib = 1;
-		}else if(n==2) {
-			fib = 2;
-		}else {
-			fib = fib(n-1) + fib(n-2);
-		}
-		return fib;
-	}
+    public static long fibEven(long n) {
+        if (n == 0 ) return 0;
+        else if(n == 1) return 1;
+        else return 4 * (fibEven(n-1) + fibEven(n-2));
+    }
+    
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int t = in.nextInt();
+        long t = in.nextLong();
         for(int a0 = 0; a0 < t; a0++){
-        	int n = in.nextInt();
+        	long n = in.nextLong();
             System.out.println(fibEven(n));
             
         }
+        in.close();
     }
 	
 }
